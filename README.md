@@ -1,1 +1,1 @@
-# react-typescript-starter
+# gpt3-react-starter
