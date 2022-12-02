@@ -9,7 +9,7 @@ const api = new OpenAIApi(configuration);
 const generateAction = async (req, res) => {
   const call = await api.createCompletion({
     model: 'text-davinci-003',
-    prompt: `This is a political debate between a Republican and a Democrat. Question: ${req.body.input}`,
+    prompt: `Generate a prayer for ${req.body.input}`,
     temperature: 0.85,
     max_tokens: 500,
   });

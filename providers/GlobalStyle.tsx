@@ -23,11 +23,10 @@ export const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 18px;
-    margin: 0;
+    margin-top: 50px;
   }
 
   textarea {
-    margin-top: 50px;
     width: 400px;
     height: 100px;
     background-color: #333;

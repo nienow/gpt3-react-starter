@@ -1,14 +1,8 @@
 import {useState} from "react";
 
-const parseOutput = (output) => {
-  const rStart = output.indexOf('Republican:');
-  const dStart = output.indexOf('Democrat:');
-  return {r: output.substring(rStart + 12, dStart), d: output.substring(dStart + 10)};
-};
-
 const IndexPage = () => {
   const [input, setInput] = useState('');
-  const [output, setOutput] = useState<{ r: string, d: string }>(null);
+  const [output, setOutput] = useState<string>(null);
   const [isGenerating, setIsGenerating] = useState(false);
 
   const generate = async () => {
@@ -23,7 +17,7 @@ const IndexPage = () => {
         body: JSON.stringify({input}),
       });
       const data = await response.json();
-      setOutput(parseOutput(data.output.text));
+      setOutput(data.output.text);
       setIsGenerating(false);
     }
   }
@@ -31,22 +25,18 @@ const IndexPage = () => {
   const Output = () => {
     if (output) {
       return <div>
-        <h3>Republican</h3>
-        <div>{output.r}</div>
-        <h3>Democrat</h3>
-        <div>{output.d}</div>
+        {output}
       </div>
     }
   };
 
   return (
     <div className="main-content">
-      <h1>AI Political Debate</h1>
-      <h2>Ask a question. Get an answer from a Republican and a Democrat.
-        Without media bias.
+      <h1>Prayer Generator</h1>
+      <h2>Please write me a prayer for...
       </h2>
       <div>
-      <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="ask question here...">
+      <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="">
       </textarea>
       </div>
       <div>
