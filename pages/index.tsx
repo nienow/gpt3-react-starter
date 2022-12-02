@@ -24,26 +24,30 @@ const IndexPage = () => {
 
   const Output = () => {
     if (output) {
-      return <div>
+      return <div className="output">
         {output}
       </div>
     }
   };
 
   return (
-    <div className="main-content">
-      <h1>Prayer Generator</h1>
-      <h2>Please write me a prayer for...
-      </h2>
-      <div>
+    <div className="main-container">
+      <div className="main-content">
+        <h1>Prayer Generator</h1>
+        <h2>Please write me a prayer for...
+        </h2>
+        <div>
       <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="">
       </textarea>
-      </div>
-      <div>
-        <button onClick={generate}>{isGenerating ? 'generating...' : 'Submit'}</button>
-      </div>
+        </div>
+        <div>
+          <button onClick={generate}>{isGenerating ? 'generating...' : 'Generate'}</button>
+        </div>
 
-      <Output></Output>
+        <Output></Output>
+      </div>
+      <div className="main-image"><img src="cross-white.png"/></div>
+
     </div>
   );
 }

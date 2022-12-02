@@ -2,18 +2,31 @@ import {createGlobalStyle} from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    background-color: #00447c;
     margin: 0;
-    padding: 20px;
+    padding: 40px;
     font-family: Calibri;
-    background-color: #111;
-    color: #ddd;
+    color: #fff;
+  }
+
+  .main-container {
+    display: flex;
   }
 
   .main-content {
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 50%;
     text-align: center;
+
+  }
+
+  .main-image {
+    width: 50%;
+    text-align: center;
+    margin: 0 20px;
+  }
+
+  .main-image img {
+    width: 600px;
   }
 
   h1 {
@@ -29,18 +42,27 @@ export const GlobalStyle = createGlobalStyle`
   textarea {
     width: 400px;
     height: 100px;
-    background-color: #333;
     border-radius: 5px;
     padding: 10px;
-    color: #ddd;
+    color: #111;
+    font-family: Calibri;
+    font-size: 16px;
   }
 
   button {
     margin-top: 10px;
     padding: 5px 20px;
-    background-color: #444;
+    background-color: #fff;
     border: none;
     outline: none;
-    color: #ddd;
+    color: #444;
+    font-family: Calibri;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .output {
+    margin-top: 50px;
+    font-size: 18px;
   }
 `
